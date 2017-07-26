@@ -111,9 +111,12 @@ static int config_rs485_mode(int fd)
 static void usage(void)
 {
     printf("rs485 {serial interface} {command}\n"
+            "\tserial interface: e.g. /dev/ttyS0\n"
             "\tcommands:\n"
             "\t\tsend <string to send>\n"
-            "\t\treceive <receive count or 0 for forever>\n");
+            "\t\treceive <receive count, 0=forever>\n"
+            "\tnote:\n"
+            "\t\tuse stty to configure echoing and baudrate\n");
 }
 
 static int run_command(const char *tty, const struct cmd *cmd, int argc, const char **argv)
