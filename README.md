@@ -1,4 +1,4 @@
-# i2ctool
+# rs485
 simple rs485 usefull for bringup/debugging
 
 Dependencies:
