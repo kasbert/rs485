@@ -84,10 +84,10 @@ static int config_rs485_mode(int fd)
     rs485conf.flags |= SER_RS485_ENABLED;
 
     /* Set RTS when sending */
-    rs485conf.flags |= SER_RS485_RTS_ON_SEND;
+    rs485conf.flags &= ~SER_RS485_RTS_ON_SEND;
 
     /* Cleare RTS after sending */
-    rs485conf.flags &= ~SER_RS485_RTS_AFTER_SEND;
+    rs485conf.flags |= SER_RS485_RTS_AFTER_SEND;
 
     /* Set RTS delay before send */
     rs485conf.delay_rts_before_send = 0;
